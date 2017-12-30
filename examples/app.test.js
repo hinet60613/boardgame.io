@@ -31,7 +31,7 @@ test('makeMove changes the game state', () => {
 
   for (let id of moves) {
     board.props.moves.clickCell(id);
-    board.props.endTurn();
+    board.props.game.endTurn();
   }
 
   expect(board.props.G).toEqual({
@@ -62,7 +62,7 @@ test('victory', () => {
 
   for (let id of moves) {
     board.props.moves.clickCell(id);
-    board.props.endTurn();
+    board.props.game.endTurn();
   }
 
   expect(board.props.G).toEqual({
