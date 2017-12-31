@@ -9,7 +9,8 @@
 import * as ActionCreators from './action-creators';
 
 /**
- * Helper to create a reducer that manages ctx (and G).
+ * Helper to create a reducer that manages ctx (with the
+ * ability to also update G).
  *
  * You probably want GameFlow below, but you might
  * need to use this directly if you are creating
@@ -43,10 +44,12 @@ export function Flow({setup, events}) {
 /**
  * GameFlow
  *
- * Wrapper around Flow that (also) creates a reducer that manages ctx.
+ * Wrapper around Flow that (also) creates a reducer to manage ctx.
+ * (with the ability to also update G).
+ *
  * This is somewhat analogous to Game(), which creates
- * a reducer to manage G. It works at a higher level
- * than Flow, incorporating phases and so on.
+ * a reducer to just manage G. It works at a higher level
+ * than Flow, also incorporating phases:
  *
  * @param {object} config - The config object that specifies various
  *                          things about the flow of the game.
