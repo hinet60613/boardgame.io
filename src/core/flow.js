@@ -50,8 +50,17 @@ export function Flow({setup, events}) {
  *
  * @param {object} config - The config object that specifies various
  *                          things about the flow of the game.
- * @param {object} config.phases - An object specifying the phases of the
- *                                 game as keys.
+ * @param {Array} config.phases - A list of phases in the game.
+ *     Each phase is described by an object like the following:
+ *       {
+ *         name: 'phase_name',
+ *
+ *         // Any setup code to be run before the phase begins.
+ *         setup: (G, ctx) => G,
+ *
+ *         // Any cleanup code to be run before the phase begins.
+ *         cleanup: (G, ctx) => G,
+ *       }
  */
 export function GameFlow(config) {
   const initial = {
